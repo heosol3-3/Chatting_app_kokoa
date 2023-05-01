@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
@@ -12,6 +13,7 @@ import friends from './data/friend.json';
 import Main from './routes/Main';
 import More from './routes/More';
 import Chats from './routes/Chats';
+import MyProfile from './routes/Myprofile';
 
 
 function App() {
@@ -34,12 +36,13 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       {isLoggedIn ? (
         <Routes>
-          <Route path='/' element={<Main friends={friends} userObj={userObj} />} />
+          <Route path='/' element={<Main friends={friends} userObj = {userObj} />} />
           <Route path='/chats' element={<Chats friends={friends}/>} />
           <Route path='/find' element={<Find />} />
-          <Route path='/more' element={<More userObj={userObj} />} />
-          <Route path='/profile' element={<Profile friends={friends} userObj={userObj} />} />
-          <Route path='/chatting' element={<Chatting friends={friends} userObj={userObj} />} />
+          <Route path='/more' element={<More userObj = {userObj} />} />
+          <Route path='/profile' element={<Profile friends={friends} userObj = {userObj} />} />
+          <Route path='/myprofile' element={<MyProfile userObj={userObj} />} />
+          <Route path='/chatting' element={<Chatting friends={friends} userObj = {userObj} />} />
         </Routes>
       ) : (
         <Auth />
