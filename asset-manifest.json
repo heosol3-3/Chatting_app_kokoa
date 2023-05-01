@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Chatting_app_kokoa/static/css/main.de534282.css",
+    "main.js": "/Chatting_app_kokoa/static/js/main.2dcb30eb.js",
+    "static/media/kakaofriends.png": "/Chatting_app_kokoa/static/media/kakaofriends.84375bb9f89d79ccd760.png",
+    "static/media/path.png": "/Chatting_app_kokoa/static/media/path.7d00edf73f07bdcecc6d.png",
+    "static/media/kakaostory.png": "/Chatting_app_kokoa/static/media/kakaostory.572f3ce5bf10fbdaac9d.png",
+    "static/media/bg_default.png": "/Chatting_app_kokoa/static/media/bg_default.82687b4e75ad8b89fa96.png",
+    "index.html": "/Chatting_app_kokoa/index.html",
+    "main.de534282.css.map": "/Chatting_app_kokoa/static/css/main.de534282.css.map",
+    "main.2dcb30eb.js.map": "/Chatting_app_kokoa/static/js/main.2dcb30eb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de534282.css",
+    "static/js/main.2dcb30eb.js"
+  ]
+}
