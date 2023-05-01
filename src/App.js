@@ -8,6 +8,9 @@ import Chatting from './routes/Chatting';
 import Auth from './components/Auth';
 
 import friends from './data/friend.json';
+import Main from './routes/Main';
+import More from './routes/More';
+import { onAuthStateChanged } from 'firebase/auth';
 
 
 function App() {
@@ -30,7 +33,7 @@ function App() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       {isLoggedIn ? (
         <Routes>
-          <Route path='/' element={<Home friends={friends} userObj={userObj} />} />
+          <Route path='/' element={<Main friends={friends} userObj={userObj} />} />
           <Route path='/Chats' element={<Find />} />
           <Route path='/More' element={<More userObj={userObj} />} />
           <Route path='/Profile' element={<Profile friends={friends} userObj={userObj} />} />

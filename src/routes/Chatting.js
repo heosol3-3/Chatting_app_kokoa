@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import '../styles/Chatting.scss';
 import { v4 as uuidv4 } from 'uuid';
 import { db, storage } from '../firebase';
+import Comment from '../components/Comment';
 
 
 function Chatting({userObj}) {
@@ -46,7 +47,7 @@ function Chatting({userObj}) {
     try{
       let attachmentUrl = '';
       if(attachment !== ''){
-        const storgeRef = ref(storge, `${friendId} ${userObj.uid}/${uuidv4()}`);
+        const storgeRef = ref(storage, `${friendId} ${userObj.uid}/${uuidv4()}`);
         const response = await uploadString(storgeRef, attachment, 'data_url')
         attachmentUrl = await getDownloadURL(ref(storage, response.ref))
       }

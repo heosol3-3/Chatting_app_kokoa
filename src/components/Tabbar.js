@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaUser,FaComment,FaSearch,FaEllipsisH } from "react-icons/fa";
 import '../styles/Tabbar.scss';
 import { Link, useLocation } from 'react-router-dom';
+import Main from '../routes/Main';
 
 function Tabbar() {
   const [activeTab, setActiveTab] = useState('home');

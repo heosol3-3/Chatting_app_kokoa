@@ -5,12 +5,14 @@ import Tabbar from '../components/Tabbar';
 import '../styles/Main.scss';
 import { Link } from 'react-router-dom';
 import { FaCog } from "react-icons/fa";
+import { db } from '../firebase';
+import { doc, onSnapshot } from 'firebase/firestore';
 
-function Main() {
+function Main({friends, userObj}) {
   const [newProfileMassage, setNewProfileMassage] = useState('')
   useEffect(() => {
     const mgRef = doc(db, `${userObj.uid}/ProfileMessage`);
-    const mgUnsub = onShot(mgRef, (doc) => {
+    const mgUnsub = onSnapshot(mgRef, (doc) => {
       if(doc.exists()) { 
         const data = doc.data();
         setNewProfileMassage(data.message);
