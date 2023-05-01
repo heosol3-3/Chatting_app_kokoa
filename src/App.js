@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
-import { authService } from 'fbase';
+import { authService } from './firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 import Find from './routes/Find';
 import Profile from './routes/Profile';
 import Chatting from './routes/Chatting';
@@ -10,7 +11,6 @@ import Auth from './components/Auth';
 import friends from './data/friend.json';
 import Main from './routes/Main';
 import More from './routes/More';
-import { onAuthStateChanged } from 'firebase/auth';
 
 
 function App() {
