@@ -1,0 +1,71 @@
+@import 'Common';
+
+.tabBar{
+  li{
+    &:nth-of-type(2){
+      a{color: #513736;}
+    }
+  }
+}
+.mainSection{
+  ul{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ebebeb;
+    li{
+      border-bottom: 1px solid #ebebeb;
+      a{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        align-items: center;
+      }
+    }
+  }
+  .chatsImg{
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+  }
+  .chatsCont{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .chatsName{
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .chatsLatest{
+      font-size: 12px;
+      color: #8e9399;
+    }
+  }
+  .chatsTime{
+    margin-right: 15px;
+    font-size: 12px;
+    color: #8e9399;
+  }
+  .chatfaBtn{
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+      background-color: #ffe84c;
+      border-radius: 30px;
+      box-shadow: 0 2px 6px #0004;
+      font-size: 18px;
+      color: #513736;
+      transition: color 300ms linear 0s, background 300ms linear 0s;
+      &:hover{
+        background: #513736;
+        color: #ffe84c;
+      }
+    }
+  }
+}
