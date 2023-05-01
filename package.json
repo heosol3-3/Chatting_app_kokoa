@@ -1,5 +1,4 @@
 {
-  "homepage": "http://heosol3-3.github.io/Chatting_app_kokoa",
   "name": "kakako",
   "version": "0.1.0",
   "private": true,
@@ -44,5 +43,6 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  }
+  },
+  "homepage": "http://heosol3-3.github.io/Chatting_app_kokoa/"
 }

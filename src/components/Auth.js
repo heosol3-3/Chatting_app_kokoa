@@ -46,7 +46,6 @@ function Auth() {
         case "auth/weak-password":
           setError("The password must be at least 6 characters long.")
           break;
-        // 그 외의 에러일 경우
         default:
           setError("Error! Please try again !");
           break;

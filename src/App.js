@@ -11,6 +11,7 @@ import Auth from './components/Auth';
 import friends from './data/friend.json';
 import Main from './routes/Main';
 import More from './routes/More';
+import Chats from './routes/Chats';
 
 
 function App() {
@@ -34,10 +35,11 @@ function App() {
       {isLoggedIn ? (
         <Routes>
           <Route path='/' element={<Main friends={friends} userObj={userObj} />} />
-          <Route path='/Chats' element={<Find />} />
-          <Route path='/More' element={<More userObj={userObj} />} />
-          <Route path='/Profile' element={<Profile friends={friends} userObj={userObj} />} />
-          <Route path='/Chatting' element={<Chatting friends={friends} userObj={userObj} />} />
+          <Route path='/chats' element={<Chats friends={friends}/>} />
+          <Route path='/find' element={<Find />} />
+          <Route path='/more' element={<More userObj={userObj} />} />
+          <Route path='/profile' element={<Profile friends={friends} userObj={userObj} />} />
+          <Route path='/chatting' element={<Chatting friends={friends} userObj={userObj} />} />
         </Routes>
       ) : (
         <Auth />

@@ -18,7 +18,7 @@ function Chats({friends}) {
       <ul>
         {friends.map((friends, index) =>
         <li key={index}>
-          <Link to={'/chatting'} state={{friendId: friends.id, friendName:friendsName, friendEmail:friends.email,profileImg:friends.profileImg, profileBg: friends.profileBg}}>
+          <Link to={'/chatting'} state={{friendId: friends.id, friendName:friends.name, friendEmail:friends.email,profileImg:friends.profileImg, profileBg: friends.profileBg}}>
             <span className='chatImg empty' style={{backgroundImage: `url(${friends.profileImg})`}}></span>
             <span className='chatCont'>
               <span className='chatsName'>{friends.name}</span>
