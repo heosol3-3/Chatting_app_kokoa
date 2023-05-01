@@ -12,14 +12,14 @@ function Main({friends, userObj}) {
   const [newProfileMassage, setNewProfileMassage] = useState('')
   useEffect(() => {
     const mgRef = doc(db, `${userObj.uid}/ProfileMessage`);
-    const mgUnsub = onSnapshot(mgRef, (doc) => {
+    const msgUnsubscribe = onSnapshot(mgRef, (doc) => {
       if(doc.exists()) { 
         const data = doc.data();
         setNewProfileMassage(data.message);
       }
     });
     return () => {
-      mgUnsub();
+      msgUnsubscribe();
     }
   },[userObj.uid]);
 
@@ -39,6 +39,7 @@ function Main({friends, userObj}) {
             <Link className='myProfile friendProfile' to='/myprofile'>
               <span className='profileImg empty' style={userObj.photoURL === null ? {backgroundImage: ''} : {backgroundImage: `url(${userObj.photoURL})`}}></span>
               <span className='profileName'>{`${userObj.displayName || "Enter My name"}`}</span>
+              <div className="profileMessages">{truncate(newProfileMassage ? `${newProfileMassage}` : '', 15)}</div>
             </Link>
           </li>
         </ul>

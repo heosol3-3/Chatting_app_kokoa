@@ -18,7 +18,7 @@ import MyProfile from './routes/Myprofile';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
-  const [userObj, setUserObj] = useState(null)
+  const [userObj, setUserObj] = useState('');
 
   useEffect(() => {
     onAuthStateChanged(authService, (user) => {
