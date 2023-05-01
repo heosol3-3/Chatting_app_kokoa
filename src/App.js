@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
-import { authService } from './firebase';
+import { authService } from './fbase';
 import { onAuthStateChanged } from 'firebase/auth';
 import Find from './routes/Find';
 import Profile from './routes/Profile';

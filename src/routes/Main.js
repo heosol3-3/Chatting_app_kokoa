@@ -5,7 +5,7 @@ import Tabbar from '../components/Tabbar';
 import '../styles/Main.scss';
 import { Link } from 'react-router-dom';
 import { FaCog } from "react-icons/fa";
-import { db } from '../firebase';
+import { db } from '../fbase';
 import { doc, onSnapshot } from 'firebase/firestore';
 
 function Main({friends, userObj}) {

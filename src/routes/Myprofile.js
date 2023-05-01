@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { updateProfile } from 'firebase/auth';
 import { ref, uploadString, getDownloadURL, deleteObject  } from "firebase/storage";
-import { db, storage } from '../firebase';
+import { db, storage } from '../fbase';
 import {onSnapshot, deleteField, deleteDoc, setDoc, doc } from 'firebase/firestore';
 
 import '../styles/Profile.scss'

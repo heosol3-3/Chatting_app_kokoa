@@ -1,10 +1,10 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
-import Tab from '../components/Tab'
-import '../styles/More.scss'
+import Tabbar from '../components/Tabbar';
 import { BsFillGearFill } from 'react-icons/bs';
-import { Link, useNavigate } from 'react-router-dom';
-import { authService } from '../firebase';
+import '../styles/More.scss';
+import { authService } from '../fbase';
 
 
 function More({userObj}) {
@@ -61,7 +61,7 @@ function More({userObj}) {
           </section>
         </main>
 
-      <Tab />
+      <Tabbar />
 
     </body>
   )

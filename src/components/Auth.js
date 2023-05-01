@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {authService} from '../firebase'
+import {authService} from '../fbase'
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { FaComment, FaGithub, FaGoogle } from 'react-icons/fa';
 

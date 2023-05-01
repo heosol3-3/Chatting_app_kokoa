@@ -6,7 +6,7 @@ import { getDownloadURL, ref, uploadString } from "firebase/storage";
 import Header from '../components/Header';
 import '../styles/Chatting.scss';
 import { v4 as uuidv4 } from 'uuid';
-import { db, storage } from '../firebase';
+import { db, storage } from '../fbase';
 import Comment from '../components/Comment';
 
 

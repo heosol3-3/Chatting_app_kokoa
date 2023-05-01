@@ -1,6 +1,6 @@
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import React, { useState } from 'react'
-import { db, storage } from '../firebase';
+import { db, storage } from '../fbase';
 import { ref, deleteObject } from "firebase/storage";
 
 import { FaPencilAlt, FaTimes } from 'react-icons/fa';
