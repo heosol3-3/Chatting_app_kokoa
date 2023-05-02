@@ -85,7 +85,7 @@ function Auth() {
     <>
       <div className='container'>
         <div className='title_container'>
-          <span className='titleBg'><FaComment /><span className='titleContent'>Mes<span className='rotateS'>s</span>enger</span></span>
+          <span className='titleBg'><FaComment /><span className='titleContent'>Kokoatalk</span></span>
 
           <form className='login_form' onSubmit={onSubmit}>
             {error && <div className="error_msg">{error}</div>}
