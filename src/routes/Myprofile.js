@@ -4,7 +4,7 @@ import { ref, uploadString, getDownloadURL, deleteObject  } from "firebase/stora
 import { db, storage } from '../fbase';
 import {onSnapshot, deleteField, deleteDoc, setDoc, doc } from 'firebase/firestore';
 
-import '../styles/Profile.scss'
+import '../styles/profile.scss'
 import { FaCheckCircle, FaComment, FaFileUpload, FaPencilAlt, FaTimes, FaTimesCircle, FaUserAlt } from 'react-icons/fa';
 import Header from '../components/Header';
 

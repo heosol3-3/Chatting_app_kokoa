@@ -1,11 +1,12 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { FaComment,FaTimes } from "react-icons/fa";
-import '../styles/Profile.scss';
+
+import { Link, useLocation } from 'react-router-dom';
+import '../styles/profile.scss'
+
+import { FaComment, FaTimes  } from 'react-icons/fa';
 import Header from '../components/Header';
 
 function Profile() {
-  const { friendName, friendEmail, profileImg, profileBg, friendId } = useLocation().state;
+   const { friendName, friendEmail, profileImg, profileBg, friendId } = useLocation().state;
 
    console.log(useLocation().state)
   return (

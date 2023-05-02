@@ -1,0 +1,130 @@
+
+main{
+  height: 87.2%;
+}
+
+/* 검색창 */
+.search_box{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  height: 7.3%;
+  min-height: 53px;
+  
+}
+
+.search_inner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 88%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: #f39a33 0 0 10px;
+
+  >.ico{
+    font-size: 16px;
+    color: #bebcc1;
+    align-self: center;
+    margin-left: 15px;
+  }
+
+  >input{
+    flex:1;
+    background: transparent;
+
+    padding: 0 15px;
+
+    &::placeholder{
+      text-align: center;
+    }
+  }
+}
+
+/* main_section */
+.main_section{
+  >header{
+    height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+    color: #b6b5b1;
+  }
+
+  >ul{
+    display:flex;
+    flex-direction: column;
+
+    >li.friend_list{
+      &:nth-child(2n){
+        background-color: #fff;
+      }
+      
+
+      >a.friend_profile, .my_profile{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 16px;
+        margin-bottom: 10px;
+        
+        >.profile_row{
+          position: relative;
+          border-radius:8px;
+          width: 100%;
+          background-position: center;
+          background-size: cover;
+          display:flex;
+          justify-content: center;
+          align-items: center;
+          transition: all 0.3s ease;
+
+          >.profile_name{
+            position: absolute;
+            z-index: 20;
+            left: 30px;
+            line-height: 30px;
+            background: rgba(255,255,255,0.4);
+            bottom: 15px;
+            padding: 0 15px;
+            border-radius: 4px;
+
+          }
+          &:hover{
+            height: 300px
+          }
+          &::after{
+            pointer-events: none;
+            content:'';
+            position: absolute;
+            right: 0;
+            height: 60px;
+            width: 100%;
+
+            transition: all 0.3s ease;
+            opacity: 1;
+          }
+          
+          &:hover::after{
+            height: 300px;
+            opacity:0;
+          }
+        
+          .profile_messages:not(:empty){
+            position: absolute;
+            z-index: 20;
+            right: 30px;
+            bottom: 15px;
+            line-height: 30px;
+            background: rgba(255,255,255,0.4);
+            padding: 0 15px;
+            border-radius: 4px;
+          }
+
+        }
+      }
+    }
+  }
+
+
+}

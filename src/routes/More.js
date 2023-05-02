@@ -1,11 +1,10 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
-import Tabbar from '../components/Tabbar';
+import Tab from '../components/Tab'
+import '../styles/more.scss'
 import { BsFillGearFill } from 'react-icons/bs';
-import '../styles/More.scss';
+import { Link, useNavigate } from 'react-router-dom';
 import { authService } from '../fbase';
-
 
 function More({userObj}) {
   const navigate = useNavigate();
@@ -61,7 +60,7 @@ function More({userObj}) {
           </section>
         </main>
 
-      <Tabbar />
+      <Tab />
 
     </body>
   )

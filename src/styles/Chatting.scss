@@ -1,152 +1,226 @@
-@import 'Common';
+/* chatting.css */
+@import url(common.scss);
 
-#root{
-  height: 100%;
-  .Header{
-    color: #000;
-    background: #a1c0d5;
-    border-bottom: 1px solid #96acba;
-    .titleBar{
-      .leftItem{
-        a{
-          color: #000;
-          opacity: 1;
-          font-size: 24px;
-        }
+/* header */
+.chatting-body{
+
+    
+  .title_bar{
+    padding: 0 10px;
+    >.left_item{
+  
+      >a{
+        color: #000;opacity: 1;font-size: 24px;
       }
-      .rightItem{
-        a{
-          color: #000;
-          font-size: 16px;
-          svg{
-            padding-left: 5px;
-          }
+    }
+    >.right_item{
+      >a{
+        color: #000;font-size: 16px;
+        >i{
+          padding-left: 5px;
         }
       }
     }
   }
+}
 
-  main{
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 109px);
-    padding-top: 64px;
-    background: #a1c0d5;
-    .dateInfo{
-      opacity: 0.5;
-      text-align: center;
-      margin: 10px;
-    }
-    .chatBox{
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: fit-content;
-      max-width: calc(100% - 80px);
-      position: relative;
-      &.my{
-        align-self: flex-end;
-        align-items: flex-end;
-        max-width: 240px;
-        margin-right: 10px;
-        .chat{
-          background: #ffe73a;
-        }
-        .chatTime{
-          position: absolute;
-          left: -30px;
-          bottom: -5px;
-          width: 50px;
-          opacity: 0.5;
-        }
-      }
-      &.other{
-        margin-left: 55px;
-        margin-top: 20px;
-        .profileImg{
-          position: absolute;
-          left: -55px;
-          top: -5px;
-          width: 35px;
-          height: 35px;
-        }
-        .profileName{
-          display: block;
-          font-weight: bold;
-          margin: 5px;
-        }
-        .chatTime{
-          position: absolute;
-          right: -30px;
-          bottom: -5px;
-          width: 50px;
-          opacity: 0.5;
-        }
-      }
-    }
-    .chat{
-      font-size: 16px;
-      line-height: 1;
-      margin: 5px;
-      padding: 10px 5px;
-      border-radius: 5px;
-      background: #fff;
-    }
+
+
+/* main */
+.chatting-main{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 90vh;
+  background:linear-gradient(#fff 0%, #ffba6c 100%);
+  padding: 0 5px;
+  padding: 64px 0; 
+}
+
+.date_info{
+  opacity: 0.5;
+  text-align: center;
+  margin: 10px;
+}
+
+/* 공통 */
+.chat_box{
+  display:inline-flex;
+  flex-direction:column;
+  align-items: flex-start;
+  width: fit-content;
+  max-width: calc(100% - 80px);
+  position: relative;
+}
+
+.chat{
+  font-size: 16px;
+  line-height: 1;
+  margin: 5px;
+  padding: 10px 5px;
+  border-radius: 5px 5px 0px 5px;
+  background: #fff;
+  max-width: 240px;
+  box-shadow: -4px 4px 8px 0px #802200 ;
+}
+
+/* my */
+
+.my{
+  padding-top: 20px;
+  align-self: flex-end;
+  align-items: flex-end;
+  
+  .chat{
+    background: #ffd3a1;
+    box-shadow: 4px 4px 8px 0px #802200 ;
   }
 
-  .footer{
-    display: flex;
-    justify-content: space-between;
+  .chat_time{
+    position: absolute;
+    left: -35px;
+    bottom: -5px;
+    width: 50px;
+    opacity: 0.5;
+    font-size: 12px;
+  }
+}
+
+  .chat_time{
+    position: absolute;
+    right: 40px;
+    bottom: -5px;
+    width: 50px;
+    opacity: 0.5;
+  }
+
+
+/* other */
+.other{
+  margin-left: 55px;
+  margin-top: 20px;
+}
+
+.chatting_profile_img{
+  position: absolute;
+  left: -40px;
+  top: -5px;
+  width: 35px;
+  height: 35px;
+}
+
+.chatting_profile_name{
+  display:block;
+  font-weight: bold;
+  margin: 5px;
+
+}
+.other{
+
+  .chat_time{
+    position: absolute;
+    right: -30px;
+    bottom: -5px;
+    width: 50px;
+    opacity: 0.5;}
+
+  .chat{
+    border-radius: 5px 5px 5px 0;
+  }
+}
+
+/* footer */
+
+  footer{
+    justify-content:space-between;
     align-items: center;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 45px;
-    background: #eee;
-    .plusBtn{
-      a{
-        color: #b3b4b4;
-        padding-left: 15px;
-        font-size: 16px;
-      }
-    }
-    form{
-      width: calc(100% - 40px);
-      display: flex;
+    background: transparent;
+  }
+
+
+.plus_btn{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  height: 37px;
+  width: 40px;
+  opacity: 0.8;
+
+  i{
+    width: 40px;
+    color: #b3b4b4;
+    font-size: 16px;
+  }
+}
+
+body{
+
+  >footer{
+
+    >form{
+      width: 100%;
+      display:flex;
       justify-content: flex-end;
-      .textBox{
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 100%;
-        .textField{
-          width: calc(100% - 40px);
-          height: 32px;
-        }
-        .emoticonBtn{
-          position: absolute;
-          right: 45px;
-          a{
-            color: #b3b4b4;
-          }
-        }
-        .sendBtn{
-          a{
-            display: block;
-            width: 34px;
-            height: 37px;
-            margin-right: 5px;
-            line-height: 37px;
-            text-align: center;
-            background: #ffe37a;
-            color: #513736;
-            font-size: 16px;
-          }
-        }
-      }
     }
   }
 }
+
+fieldset.text_box{
+  position: relative;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  transition: all 0.3s ease;
+  color: #fff;
+  .chat_submit{
+    margin-left: 8px;
+  }
+  .text_field{
+    width: calc(100% - 40px);
+    height: 32px;
+  }
+  
+  .emoticon_btn{
+    position: absolute;
+    right: 80px;
+    a{
+      color: #b3b4b4;
+    }
+  }
+  .voice_btn{
+  
+     a{
+      display:block;
+      width: 34px;
+      height: 37px;
+      margin-right: 5px;
+      line-height: 37px;
+      text-align: center;
+      background: transparent;
+      color: #513736;
+      font-size: 20px;}
+  }
+  
+  .attachment{
+    position: absolute;
+    width: 100%;
+    bottom: 42px;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+  }
+}
+
+
+
+
+
+
 

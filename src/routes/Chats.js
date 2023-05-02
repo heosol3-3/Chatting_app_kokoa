@@ -1,41 +1,52 @@
 import React from 'react'
-import Header from '../components/Header';
-import Searchbox from '../components/Searchbox';
-import Tabbar from '../components/Tabbar';
-import { FaComment } from "react-icons/fa";
-import '../styles/Chats.scss';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header'
+import Tab from '../components/Tab'
 
+import { Link } from 'react-router-dom'
+
+import '../styles/chats.scss'
 
 function Chats({friends}) {
+  
   return (
     <>
-    <Header left='Edit' title='Chats' right='' />
+      <Header left='Edit' title='Chats' right='' />
+        <main>
+          <form className="search_box">
+            <fieldset className="search_inner">
+              <legend className="blind">검색창</legend>
+              <i className="fa-solid fa-magnifying-glass"></i>
+              <input type="search" name="search" id="search" placeholder="Find Friends, chats, Plus Friends" />
+            </fieldset>
+          </form>
 
-    <Searchbox />
-    <div className='mainSection'>
-      <header className='blind'><h2>Friends</h2></header>
-      <ul>
-        {friends.map((friends, index) =>
-        <li key={index}>
-          <Link to={'/chatting'} state={{friendId: friends.id, friendName:friends.name, friendEmail:friends.email,profileImg:friends.profileImg, profileBg: friends.profileBg}}>
-            <span className='chatImg empty' style={{backgroundImage: `url(${friends.profileImg})`}}></span>
-            <span className='chatCont'>
-              <span className='chatsName'>{friends.name}</span>
-              <span className='chatsLatest'>{friends.lastChat}</span>
-            </span>
-            <span className='chatsTime'><span>03</span>:<span>33</span></span>
-          </Link>
-        </li>
-        )}
-      </ul>
-      </div>
-      <div className='chatfaBtn'>
-        <Link to={'/'}>
-          <FaComment />
-        </Link>
-      </div>
-    <Tabbar />
+          <section className="main_section">
+            <header><h2>Friends</h2></header>
+            <ul>
+            {friends.map((friends, index) => 
+              <li key={index}>
+                  <Link to={'/chatting'} state = {{friendId: friends.id, friendName: friends.name,friendEmail: friends.email, profileImg: friends.profileImg, profileBg: friends.profileBg}}>
+                  <span className="chats_img empty" style={{ backgroundImage: `url(${friends.profileImg})` }}></span>
+                  <span className="chats_cont">
+                    <span className="chats_name">{friends.name}</span>
+                    <span className="chats_latest">{friends.lastChat}</span>
+                  </span>
+                  <span className="chats_time"><span>00</span>:<span>00</span></span>
+                </Link>
+              </li>
+            )}
+
+            </ul>
+          </section>
+          
+          
+          <div className="chat_fa_btn">
+            <a href="#">
+              <i className="fa-solid fa-comment"></i>
+            </a>
+          </div>
+        </main>
+      <Tab />
     </>
   )
 }

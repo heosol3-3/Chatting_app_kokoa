@@ -1,71 +1,129 @@
-@import 'Common';
+main{
+  height: 85.8%;
+  padding:  64px 0;
+}
 
-.tabBar{
-  li{
-    &:nth-of-type(2){
-      a{color: #513736;}
+/* 검색창 */
+.search_box{
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  height: 7.3%;
+  min-height: 53px;
+  margin-bottom: 10px;
+}
+
+.search_inner{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 88%;
+  height: 50%;
+  background-color: #f1f2f4;
+  border-radius: 5px;
+
+  >i{
+    font-size: 16px;
+    color: #bebcc1;
+    align-self: center;
+    margin-left: 15px;
+  }
+
+  >input{
+    flex:1;
+    background: transparent;
+    border:none;
+    padding: 0 15px;
+
+    &::placeholder{
+      text-align: center;
     }
   }
 }
-.mainSection{
-  ul{
-    display: flex;
-    flex-direction: column;
-    border-top: 1px solid #ebebeb;
-    li{
-      border-bottom: 1px solid #ebebeb;
-      a{
-        display: flex;
+
+/* main_section */
+.main_section{
+  >header{
+    background-color: #fff0de;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 15px;
+    border-left:none;
+    color: #b6b5b1;
+  }
+
+  >ul{
+
+    >li{
+      &:nth-child(2n){
+        background-color: #fff0de ;
+      }
+
+      >a{
+        display:flex;
         flex-wrap: wrap;
         font-size: 16px;
         align-items: center;
       }
     }
   }
-  .chatsImg{
-    width: 50px;
+  
+  .chats_img{
+    width:50px;
     height: 50px;
-    margin: 15px;
-  }
-  .chatsCont{
-    flex: auto;
-    display: flex;
+    margin: 10px;
+    }
+
+  .chats_cont{
+    flex:auto;
+    display:flex;
     flex-direction: column;
     justify-content: center;
-    .chatsName{
+    color: #8e9399;
+    font-size: 14px;
+
+    .chats_name{
+      color: #000;
       font-weight: bold;
-      margin-bottom: 5px;
-    }
-    .chatsLatest{
-      font-size: 12px;
-      color: #8e9399;
     }
   }
-  .chatsTime{
+  .chats_time{
     margin-right: 15px;
     font-size: 12px;
     color: #8e9399;
   }
-  .chatfaBtn{
-    position: fixed;
-    right: 20px;
-    bottom: 80px;
-    a{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 60px;
-      height: 60px;
-      background-color: #ffe84c;
-      border-radius: 30px;
-      box-shadow: 0 2px 6px #0004;
-      font-size: 18px;
-      color: #513736;
-      transition: color 300ms linear 0s, background 300ms linear 0s;
-      &:hover{
-        background: #513736;
-        color: #ffe84c;
-      }
-    }
+}
+
+/* floating action bar */
+.chat_fa_btn{
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+
+  >a{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: #ffba6c;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #0004;
+    font-size: 18px;
+    color: #513736;
+    transition: color 300ms linear 0s, background 300ms linear 0s;
+    
+    
+  }
+}
+
+.chat_fa_btn{
+
+  >a{
+
+    &:hover{
+      background: rgb(0, 0, 0);
+      color: #ffba6c;}
   }
 }

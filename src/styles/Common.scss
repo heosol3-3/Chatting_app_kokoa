@@ -1,31 +1,38 @@
-@import 'Reset';
-@import 'Header';
-@import 'Tabbar';
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 
+@import url(reset.scss);
+@import url(tab.scss);
+@import url(header.scss);
 
+html{
+  overflow-y: scroll;
+  background-color: #fff;
+}
 
 body{
   font-size: 12px;
-  a{
-    &:link,&:visited{
-      color: #000;
-      text-decoration: none;
-    }
-    &:hover,&:focus,&:active{
-      color: #000;
-      text-decoration: none;
-    }
-  }
-  img{
-    max-width: 100%;
-  }
-  .empty{
-    display: block;
-    width: 40px;
-    height: 40px;
-    margin: 10px 15px;
-    border-radius: 50%;
-    background: url(../../images/empty.jpg) no-repeat 0 0;
-    background-size: cover;
-  }
+}
+
+a:link, a:visited{
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active{
+  color: #000;
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+}
+
+.empty{
+  display:block;
+  width: 200px;
+  height: 60px;
+  border-radius: 50%;
+  background: url(../images/empty.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 }

@@ -8,7 +8,7 @@ import "../styles/auth.scss"
 function Auth() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [newAccount, setNewAccount] = useState(true); 
+  const [newAccount, setNewAccount] = useState(true); // true 회원가입, false 로그인
   const [error, setError] = useState('');
 
   const onChange = (e) => {
@@ -33,6 +33,7 @@ function Auth() {
       }
       console.log(data);
     } catch(error) {
+      console.log('error->', error);
       switch(error.code) {
         case "auth/wrong-password":
           setError("Wrong Password !");
@@ -46,6 +47,7 @@ function Auth() {
         case "auth/weak-password":
           setError("The password must be at least 6 characters long.")
           break;
+        // 그 외의 에러일 경우
         default:
           setError("Error! Please try again !");
           break;
@@ -74,7 +76,7 @@ function Auth() {
     if(error !== ""){
       setTimeout(() => {
         setError("");
-      }, 3000); 
+      }, 3000); // 3초 후에 error 값을 빈 문자열로 변경
     }
   }, [error]);
 

@@ -4,6 +4,7 @@ import { db, storage } from '../fbase';
 import { ref, deleteObject } from "firebase/storage";
 
 import { FaPencilAlt, FaTimes } from 'react-icons/fa';
+import '../styles/comment.scss'
 
 
 function Comment(props) {
@@ -12,6 +13,8 @@ function Comment(props) {
   const [newComment, setNewComment] = useState(text)
  
   const createdAtDate = new Date(createdAt)
+console.log('props.id----------------', props.chatObj.id)
+console.log('id-------------------', id)
 
   let chatHour = createdAtDate.getHours();
     if (chatHour < 10) chatHour = '0' + chatHour
@@ -53,6 +56,7 @@ function Comment(props) {
   
     await updateDoc(newCommentRef, {
       text: newComment,
+      //createdAt: Date.now()b  //채팅내용을 수정할때 최하단으로 이동하고싶으면 주석 풀기
     });
     
     setEditing(false)

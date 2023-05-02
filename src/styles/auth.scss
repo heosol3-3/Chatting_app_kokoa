@@ -1,4 +1,4 @@
-@import 'Common';
+
 
 
 .container {
@@ -6,15 +6,16 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #101010;
+  background: #f15c25;
+  background: linear-gradient(0deg, #f15c25 0%, #ffba6c 100%);
 
   .title_container {
-    .titleBg {
+    > .titleBg {
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 180px;
+      font-size: 250px;
       margin-bottom: 60px;
       animation: beat 2s infinite;
 
@@ -36,25 +37,36 @@
           transform: scale(1.05);
         }
       }
-       span {
+      > span {
         position: absolute;
         font-family: 'Dongle', sans-serif;
         font-size: 76px;
-        color: #101010;
+        color: #742408;
 
-        .rotateS{
+        >.rotateS{
           display:inline-block;
+          animation: rotate 4s infinite;
+          @keyframes rotate{
+            0% {
+              transform: rotate(0deg)
+            }
+
+            100% {
+              transform: rotate(360deg)
+            }
+          }
+
         }
       }
     }
 
-    .login_form {
+    >.login_form {
       position: relative;
       margin-top: 30px;
       display: flex;
       flex-direction: column;
 
-      .error_msg{
+      >.error_msg{
         display:flex;
         align-items: center;        
         justify-content: center;
@@ -143,7 +155,7 @@
       }
     }
 
-     div {
+    > div {
       display: flex;
       justify-content: center;
       margin-top: 20px;
@@ -169,7 +181,7 @@
         }
       }
 
-       button {
+      > button {
         color: #000;
         transition: all 0.5s ease;
         > svg {

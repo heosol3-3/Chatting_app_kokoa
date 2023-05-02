@@ -1,54 +1,55 @@
-import { FaPlane,FaWifi,FaMoon,FaBluetoothB,FaBatteryFull } from "react-icons/fa";
-import '../styles/Header.scss';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import '../styles/header.scss'
+import { Link } from 'react-router-dom'
+import { FaBatteryHalf, FaBluetooth, FaMoon, FaPlane, FaWifi } from 'react-icons/fa'
 
-
-function Header({left, title, right, span, isTransparent}) {
+function Header({left, title, span, right, isTransparent}) {
   if(left === undefined){left = ''}
   if(title === undefined){title = ''}
-  if(right === undefined){right = ''}
   if(span === undefined){span = ''}
+  if(right === undefined){right = ''}
 
   const headerClassName = isTransparent ? 'header transparent' : 'header';
-  const time = new Date();
+  const time = new Date()
   const nowHour = time.getHours();
-  const tenMinute = time.getMinutes();
-  const nowMinutes = tenMinute < 10 ? '0'+ tenMinute : tenMinute;
+  const tmpMinutes = time.getMinutes();
+  const nowMinutes = tmpMinutes < 10 ? '0' + tmpMinutes : tmpMinutes
 
   return (
-    <div className='Header'>
-      <div className={`headerContainer ${headerClassName}`}>
-      <div className='statusBar'>
-        <div className='leftItem'>
-          <FaPlane />
-          <FaWifi />
-        </div>
 
-        <div className='centerItem'>
-          <span>{nowHour}</span>:<span>{nowMinutes}</span>
-        </div>
+    <header>
+      <div className= {`header_container ${headerClassName}`}>
 
-        <div className='rightItem'>
-          <FaMoon />
-          <FaBluetoothB />
-          <span><span>100</span>%</span>
-          <FaBatteryFull />
-        </div>
+        <div className="status_bar">
+          <div className="left_item">
+            <FaPlane />
+            <FaWifi />
+          </div>
 
-      </div>
+          <div className="center_item">
+            <span>{nowHour}</span> : <span>{nowMinutes}</span>   
+          </div>
 
-      <div className='titleBar'>
-        <h1>{title}<span>{span}</span></h1>
-        <div className='leftItem'>
-          <Link to={'/'}>{left}</Link>
+          <div className="right_item">
+            <FaMoon />
+            <FaBluetooth />
+            <span>100%</span>
+            <FaBatteryHalf />
+          </div>
+  
         </div>
-        <div className='rightItem'>
-          <Link to={'/'}>{right}</Link>
+        <div className="title_bar">
+            <h1> {title} <span>{span}</span></h1>
+            <div className="left_item"><Link to='/'>{left}</Link></div>
+            <div className="right_item">{right}</div>
           </div>
       </div>
-      </div>
-    </div>
+
+
+
+</header>
+
   )
 }
 
-export default Header;
+export default Header
